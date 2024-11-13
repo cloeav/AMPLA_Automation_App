@@ -1,0 +1,7 @@
+selenium
+pandas
+pdfplumber
+openpyxl
+openai
+python-docx
+streamlit
