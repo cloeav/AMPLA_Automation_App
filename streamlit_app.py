@@ -7,7 +7,6 @@ st.title("Run Python Script on Streamlit Cloud")
 
 # Button to trigger the execution of the script
 if st.button("Run Python Script"):
-        
-    # Run the Python script using subprocess
-    result = subprocess.run('python','AMPLA_automation_git.py', shell=True, capture_output=True, text=True)
+        subprocess.run(['python', 'AMPLA_automation_git.py'], shell=True, capture_output=True, text=True)
+
     
