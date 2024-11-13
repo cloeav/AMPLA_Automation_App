@@ -1,24 +1,22 @@
 import streamlit as st
 import subprocess
 
-# Title of the app
-st.title('Streamlit Command Runner')
+# Title of the Streamlit app
+st.title("Run Python Script on Streamlit Cloud")
 
-# Input for arguments
-args = st.text_input("Enter Arguments for the Script", "[ARGUMENTS]")
 
-# Button to trigger the command
-if st.button('Run Streamlit Script'):
+# Button to trigger the execution of the script
+if st.button("Run Python Script"):
     try:
-        # Construct the command
-        command = f"streamlit run c:/Users/cloea/Desktop/streamlit_app.py {args}"
+        # Construct the command to run the Python script with any arguments
+        command = 'AMPLA_automation_git.py'
         
-        # Run the command using subprocess
-        result = subprocess.run(command, shell=True, capture_output=True, text=True)
+        # Run the Python script using subprocess
+        result = subprocess.run('python',command, shell=True, capture_output=True, text=True)
         
-        # Display the output of the command
+        # Display the output of the script
         st.text(result.stdout)
         st.text(result.stderr)
-
+    
     except Exception as e:
-        st.error(f"Error running the command: {e}")
+        st.error(f"Error: {e}")
